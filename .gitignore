@@ -26,8 +26,11 @@
 *.sql
 *.sqlite
 .ipynb_checkpoints
+__pycache__/*
 
 # Data files #
 ######################
 *.parquet
 *.pickle
+*.p
+cifar-10-batches-py/*

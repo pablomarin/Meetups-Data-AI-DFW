@@ -34,3 +34,4 @@ __pycache__/*
 *.pickle
 *.p
 cifar-10-batches-py/*
+image_classification.*

@@ -35,3 +35,5 @@ __pycache__/*
 *.p
 cifar-10-batches-py/*
 image_classification.*
+save.*
+checkpoint*

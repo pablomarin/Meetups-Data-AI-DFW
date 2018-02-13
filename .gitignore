@@ -23,6 +23,7 @@
 # Logs and databases #
 ######################
 *.log
+*.txt
 *.sql
 *.sqlite
 .ipynb_checkpoints

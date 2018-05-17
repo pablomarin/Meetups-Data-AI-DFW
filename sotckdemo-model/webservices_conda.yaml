@@ -1,0 +1,28 @@
+
+# Conda environment specification. The dependencies defined in this file will
+# be automatically provisioned for managed runs. These include runs against
+# the localdocker, remotedocker, and cluster compute targets.
+
+# Note that this file is NOT used to automatically manage dependencies for the
+# local compute target. To provision these dependencies locally, run:
+# conda env update --file conda_dependencies.yml
+
+# Details about the Conda environment file format:
+# https://conda.io/docs/using/envs.html#create-environment-file-by-hand
+
+# For managing Spark packages and configuration, see spark_dependencies.yml.
+
+name: project_environment
+channels:
+- conda-forge
+- defaults
+dependencies:
+  - python=3.5.2
+  - pip:
+    - azure-common==1.1.8
+    - azure-storage==0.36.0
+    - numpy==1.14.0 
+    - sklearn
+    - keras
+    - tensorflow
+    - h5py

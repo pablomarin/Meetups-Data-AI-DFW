@@ -23,22 +23,21 @@ def init():
     loaded_model.load_weights("modellstm.h5")
 
 def run(score_input): 
-    score_input = pd.read_json(score_input)
     amount_of_features = len(score_input.columns)
-    
     data = score_input.as_matrix() #converts to numpy
     seq_len = 10
     result = []
-    for index in range(len(data) - seq_len):
-        result.append(data[index: index + seq_len])
-
+    for index in range(len(data) - seq_len + 1):
+        result.append(data[index: index + seq_len + 1])
+        
     result = np.array(result)
-
+    
     seq_array = np.reshape(result, (result.shape[0], result.shape[1], amount_of_features))  
     
+    print(seq_array.shape)
+        
     try:
-        prediction = loaded_model.predict_proba(seq_array)
-        print(prediction)
+        prediction = loaded_model.predict(seq_array)
         pred = prediction.tolist()
         return(pred)
     except Exception as e:

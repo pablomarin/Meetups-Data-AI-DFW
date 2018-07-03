@@ -5,7 +5,7 @@ import requests
 import pandas as pd
 
 # The URL will need to be editted after service create.
-url = 'http://127.0.0.1:32770/score'
+url = 'http://23.96.11.240:5001/score'
 
 ## Sequence length will need to match the training sequence length from the model training
 sequence_length = 10
@@ -19,12 +19,10 @@ try:
         print("Skipping scoring as we need {} records to score and only have {} records.".format(sequence_length, body.shape[0]))
     else:
         #print('{}'.format(body.shape))
-        body = "{\"score_input\": " + \
-                    body.to_json(orient="records") +\
-                    "}"
+        body = json.dumps({"data": body.to_json(orient='records')})
         print (body + '\n')
         req = urllib.request.Request(url, str.encode(body), headers) 
-
+        
         with urllib.request.urlopen(req) as response:
             the_page = response.read()
             print('{}'.format(the_page))

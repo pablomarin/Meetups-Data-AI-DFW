@@ -5,7 +5,7 @@ import requests
 import pandas as pd
 
 # The URL will need to be editted after service create.
-url = 'http://23.96.11.240:5001/score'
+url = 'http://40.121.38.37:5001/score'
 
 ## Sequence length will need to match the training sequence length from the model training
 sequence_length = 10

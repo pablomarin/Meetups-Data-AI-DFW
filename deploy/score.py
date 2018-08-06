@@ -6,7 +6,7 @@ import pandas as pd
 from azureml.core.model import Model
 from keras.models import load_model
 
-TICKER = "MSFT"
+TICKER = "SPY"
 LSTM_MODEL = TICKER +'-modellstm.h5'
 MIN_MAX_DICT = TICKER +'-min_max.pkl'
 

@@ -38,6 +38,7 @@ def run(raw_data):
             data_n[feature_name] = (data[feature_name] - min_dict[feature_name]) / (max_dict[feature_name] - min_dict[feature_name])
         
         # Create sequences
+        data_n = data_n.reindex(sorted(data_n.columns), axis=1) # To make sure columns are always with same order
         data = data_n.values 
         seq_len = 10
         result = []

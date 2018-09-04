@@ -24,7 +24,6 @@
 ######################
 *.log
 *.txt
-*.sql
 *.sqlite
 .ipynb_checkpoints
 __pycache__/*
